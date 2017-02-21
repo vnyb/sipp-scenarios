@@ -1,6 +1,14 @@
-#sipp-scenarios
+# SIPp scenarios
 
-This is a collection of SIPp scenarios that I use for testing.
+This is a collection of SIPp scenarios for testing purposes.
 
-SIPp may be downloaded here: http://sipp.sourceforge.net
+SIPp - download and documentation: http://sipp.sourceforge.net
+
+Thanks: https://github.com/saghul/sipp-scenarios
+
+# Scenarios
+
+| Name | Description |
+|------|-------------|
+| .xml | Scenario |
 

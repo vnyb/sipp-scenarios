@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+import fileinput
+import glob
+import xml.etree.ElementTree as xml
+
+f_input = fileinput.input('README.markdown', inplace=1)
+
+for line in f_input:
+    print(line, end='')
+    if line.startswith('<!-- LIST-BEGIN -->'):
+        break
+
+print("| Name | Description |")
+print("|------|-------------|")
+
+for scenario_file in glob.glob("sipp_*.xml"):
+    scenario = xml.parse(scenario_file).getroot()
+    name = scenario.attrib['name'];
+    if name is not None and len(name) > 0:
+        print("| `%s` | %s |" % (scenario_file, name))
+
+for line in f_input:
+    if line.startswith('<!-- LIST-END -->'):
+        print(line, end='')
+        break
+
+for line in f_input:
+    print(line, end='')
+

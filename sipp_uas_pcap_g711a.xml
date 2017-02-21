@@ -19,7 +19,7 @@
 <!--                 Sipp default 'uas' scenario.                       -->
 <!--                                                                    -->
 
-<scenario name="Basic UAS responder">
+<scenario name="UAS audio PCMA 8000 (G.711)">
   <!-- By adding rrs="true" (Record Route Sets), the route sets         -->
   <!-- are saved and used for following messages sent. Useful to test   -->
   <!-- against stateful SIP proxies/B2BUAs.                             -->

@@ -18,3 +18,18 @@ Thanks: https://github.com/saghul/sipp-scenarios
 | `sipp_uas_delayed_answer.xml` | UAS delayed answer |
 | `sipp_uas_pcap_g711a.xml` | UAS audio PCM-A 8000 (G.711) |
 <!-- LIST-END -->
+
+# Use cases
+
+## Success call (without RTP)
+
+Server side:
+```bash
+sipp -sn uas -i <server adress> -p 5060
+```
+
+Client side:
+```bash
+sipp -sf sipp_uac_basic.xml -m 1 <server adress>:5060
+```
+

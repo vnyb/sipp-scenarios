@@ -32,4 +32,15 @@ Client side:
 ```bash
 sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
 ```
+## Busy callee
+
+Server side:
+```bash
+sipp -sf sipp_uas_486_busy.xml -i <server address> -p 5060
+```
+
+Client side:
+```bash
+sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
+```
 

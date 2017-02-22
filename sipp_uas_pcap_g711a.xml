@@ -101,7 +101,9 @@
       <exec play_pcap_audio="g711a.pcap"/>
     </action>
   </nop>
-  <pause milliseconds="90000"/>
+
+  <!-- 110 seconds is approximately the duration of the pcap file -->
+  <pause milliseconds="110999"/>
 
   <recv request="BYE">
   </recv>

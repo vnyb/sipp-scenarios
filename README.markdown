@@ -32,6 +32,19 @@ Client side:
 ```bash
 sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
 ```
+
+## Success call (with RTP)
+
+Server side:
+```bash
+sipp -sf sipp_uas_pcap_g711a.xml -i <server address> -mi <server address> -mp 60
+```
+
+Client side:
+```bash
+sipp -sf sipp_uac_pcap_g711a.xml -m 1 -i <client address> -mi <client address> -p 6000 <server address>:5060
+```
+
 ## Busy callee
 
 Server side:

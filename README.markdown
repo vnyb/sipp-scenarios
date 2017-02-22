@@ -25,11 +25,11 @@ Thanks: https://github.com/saghul/sipp-scenarios
 
 Server side:
 ```bash
-sipp -sn uas -i <server adress> -p 5060
+sipp -sf sipp_uas_basic.xml -i <server address> -p 5060
 ```
 
 Client side:
 ```bash
-sipp -sf sipp_uac_basic.xml -m 1 <server adress>:5060
+sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
 ```
 

@@ -44,3 +44,14 @@ Client side:
 sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
 ```
 
+## Callee does not answer, caller cancels the request
+
+Server side:
+```bash
+sipp -sf sipp_uas_no_answer.xml -i <server address> -p 5060
+```
+
+Client side:
+```bash
+sipp -sf sipp_uac_cancel.xml -m 1 <server address>:5060
+```

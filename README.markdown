@@ -37,7 +37,7 @@ sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
 
 Server side:
 ```bash
-sipp -sf sipp_uas_pcap_g711a.xml -i <server address> -mi <server address> -mp 60
+sipp -sf sipp_uas_pcap_g711a.xml -i <server address> -mi <server address> -mp 6000
 ```
 
 Client side:
@@ -80,3 +80,23 @@ Client side:
 ```bash
 sipp -sf sipp_uac_basic.xml -m 1 <server address>:5060
 ```
+
+## Multi-party call (with RTP)
+
+It is possible simulate a multi-party call using `sipp_uac_pcap_g711a.xml` and `sipp_uas_pcap_g711a.xml` scenario files. In this example, Alice and Bob both call Charlie. In a real use case, Charlie is supposed to mix his own stream with the Alice one to send it to Bob in a single RTP audio session. In the same way, Charlie is supposed to mix his own stream with the Bob on to send it to Alice.
+
+Charlie side:
+```bash
+sipp -sf sipp_uas_pcap_g711a.xml -i <Charlie's address> -mi <Charlie's address> -mp 6000
+```
+
+Bob side:
+```bash
+sipp -sf sipp_uac_pcap_g711a.xml -m 1 -i <Bob's address> -mi <Bob's address> -p 6000 <Charlie's address>:5060
+```
+
+Alice side:
+```bash
+sipp -sf sipp_uac_pcap_g711a.xml -m 1 -i <Alice's address> -mi <Alice's address> -p 6000 <Charlie's address>:5060
+```
+
